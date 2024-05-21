@@ -1,14 +1,17 @@
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from './Navbar/Navbar'
 import Search from './Search'
-import Banner from './Banner'
+import Banner from './Banner/Banner'
+import Accordian from './Accordian/Accordian'
+
 
 const Home = () => {
   return (
     <>
-    <Navbar/>
+   
     <Search/>
     <Banner/>
+    <Accordian/>
     </>
   )
 }

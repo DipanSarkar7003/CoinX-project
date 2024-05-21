@@ -7,8 +7,9 @@ const Search = () => {
         
 
         <input type="text"  id='searchBar' placeholder='search for coin or exchanges ...'/>
+        <button className='Btn' style={{padding:"1.2% 2%"}}>Get the result</button>
 
-
+ 
     </div>
 
 )
