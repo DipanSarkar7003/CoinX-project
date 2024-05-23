@@ -8,14 +8,7 @@ function Coins() {
   const [selectedCoinId, setSelectedCoinId] = useState("bitcoin");
   const [selectedCoin, setSelectedCoin] = useState(null);
 
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      "x-cg-pro-api-key": "CG-w7iy4D1gnHJWs1X9d7JGyLPX",
-      changeOrigin: true,
-    },
-  };
+
   const coinUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`;
 
   useEffect(() => {
