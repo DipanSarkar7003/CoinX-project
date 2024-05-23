@@ -23,7 +23,7 @@ const Accordian = () => {
     <div className="accordion">
       
       {faqs.map((item, index) => (
-        <AccordianItem item={item}  index={index}/>
+        <AccordianItem item={item}  index={index} key={index}/>
       ))}
     </div>
       </>

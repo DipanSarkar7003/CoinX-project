@@ -10,8 +10,8 @@ const Navbar = () => {
 <nav className='navbar'>
     <Link to={"/"} className='logo'>CoinX</Link>
     <ul className='navList'>
-        {navItems.map((item)=> { 
-        return ( <NavLink className='listItem' to={item.path}>{item.element}</NavLink> 
+        {navItems.map((item , index)=> { 
+        return ( <NavLink className='listItem' to={item.path} key={index}>{item.element} </NavLink> 
 )})}
     </ul>
 </nav>  )

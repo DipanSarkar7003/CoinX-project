@@ -6,7 +6,7 @@ const BannerButtons = () => {
 
   return (
     <div className='bannerButtons'>
-        {Buttons.map((item)=> <button className='Btn'>{item}</button>)}
+        {Buttons.map((item , index)=> <button className='Btn' key={index}>{item}</button>)}
     </div>
   )
 }
