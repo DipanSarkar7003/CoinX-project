@@ -1,5 +1,6 @@
 import React from "react";
 import BannerButtons from "./BannerButtons";
+const bannerImageUrl = 'https://i.postimg.cc/KYmPy0Vf/bitcoin.png'
 
 const Banner = () => {
   return (
@@ -17,7 +18,8 @@ const Banner = () => {
               with you.
             </p>
           </div>
-          <img className="bannerImage" src="https://shorturl.at/wfJCq" alt="Bitcoin Image" />
+          {/* <img className="bannerImage" src="https://postimg.cc/ZWDB8xJv" alt="Bitcoin Image" /> */}
+        <img className="bannerImage" src={bannerImageUrl} border='0' alt='bitcoin'/>
         </div>
         <BannerButtons />
       </div>

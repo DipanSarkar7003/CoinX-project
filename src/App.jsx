@@ -17,6 +17,7 @@ function App() {
   <Route path='/' element={  <Home/>}/>
   <Route path='/exchanges' element={  <Exchanges/>}/>
   <Route path='/coins' element={  <Coins/>}/>
+  <Route path='*' element={<h1>404 page not found</h1>}/>
 </Routes>
 </BrowserRouter>
 
