@@ -294,3 +294,13 @@ margin: 3% 0;
 .priceUp{
  color:  #00D964;
 }
+.heroCoinBanner{
+  width: 90%;
+  margin: auto;
+}
+.SelectedCoinImage{
+  width: 50px;
+}
+.SelectedCoinName{
+  font-size: 1.5rem;
+}
