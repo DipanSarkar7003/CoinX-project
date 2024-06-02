@@ -19,7 +19,8 @@ const Banner = () => {
             </p>
           </div>
           {/* <img className="bannerImage" src="https://postimg.cc/ZWDB8xJv" alt="Bitcoin Image" /> */}
-        <img className="bannerImage" src={bannerImageUrl} border='0' alt='bitcoin'/>
+        {/* <img className="bannerImage" src={bannerImageUrl} border='0' alt='bitcoin'/> */}
+       <img className="bannerImage" src='https://i.postimg.cc/LXZMfhGb/Bitcoin-3d.png' border='0' alt='Bitcoin-3d'/>
         </div>
         <BannerButtons />
       </div>
