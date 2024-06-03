@@ -2,8 +2,8 @@ import React from "react";
 
 const ExchangeItem = ({item}) => {
   return (
-    <div key={item.id} className="exchangeItem">
-      <img src={item.image} alt="" />
+    <div className="exchangeItem">
+      <img src={item.image} alt=" coin imag" />
       <h3>{item.name}</h3>
       <p> Year Published : {item.year_established
 }</p>

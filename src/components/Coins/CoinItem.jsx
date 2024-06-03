@@ -6,7 +6,7 @@ function CoinItem( {item , setSelectedCoinId , }) {
     className="coinItem"
     key={item.id}
     id={item.id}
-    onClick={(e) => setSelectedCoinId(item.id)}
+    onClick={() => setSelectedCoinId(item.id)}
   >
     <img src={item.image} alt="" />
     <h3>{item.name}</h3>

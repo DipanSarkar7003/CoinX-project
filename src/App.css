@@ -4,10 +4,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   /* background-color: blueviolet; */
   padding: 2% 0;
-  gap: 30%;
+  /* gap: 30%; */
 }
 
 .logo {

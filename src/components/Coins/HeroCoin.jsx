@@ -3,6 +3,7 @@ import ChartsComp from './ChartsComp'
 
 const HeroCoin = ({selectedCoin ,coinChartData}) => {
   console.log(selectedCoin)
+ console.log(coinChartData) 
 
   return (<>
    {selectedCoin?  <div className="heroCoinBanner">
@@ -33,11 +34,11 @@ const HeroCoin = ({selectedCoin ,coinChartData}) => {
 
 
  </div>
-  : <h1>data not found </h1> }
+  : <h1 style={{textAlign:"center"}}>Loading your data ... </h1> }
 
   
   </>
   )
 }
 
-export default HeroCoin
+export default HeroCoin ;

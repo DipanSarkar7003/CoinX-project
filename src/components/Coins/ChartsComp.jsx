@@ -18,9 +18,7 @@ const ChartsComp = ( {coinChartData}) => {
     for (let i = 0; i < coinChartData.length; i++) {
       date.push(new Date(coinChartData[i][0]).toLocaleDateString());
       prices.push(coinChartData[i][1]);
-    }
-    console.log(coinChartData)
-  
+    }  
     let data = {
       labels: date,
       datasets: [

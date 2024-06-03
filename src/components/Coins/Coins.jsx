@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import HeroCoin from "./HeroCoin";
 import CoinItem from "./CoinItem"
 function Coins() {
@@ -10,7 +10,7 @@ function Coins() {
   const [coinChartData, setCoinChartData] = useState([]);
 
   const coinUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`;
-  const coinChartUrl = `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=inr&days=1`;
+  const coinChartUrl = `https://api.coingecko.com/api/v3/coins/${selectedCoinId}/market_chart?vs_currency=inr&days=10`;
 
   useEffect(() => {
     const fetchCoinData = async () => {
@@ -49,6 +49,7 @@ function Coins() {
             item={item}
             selectedCoinId={selectedCoinId}
             setSelectedCoinId={setSelectedCoinId}
+            key={item.id}
           />
         ))}
       </div>
