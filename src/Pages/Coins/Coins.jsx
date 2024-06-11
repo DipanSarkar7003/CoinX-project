@@ -10,7 +10,7 @@ function Coins() {
   const [coinChartData, setCoinChartData] = useState([]);
 
   // const coinUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`;
-  const coinChartUrl = `https://api.coingecko.com/api/v3/coins/${selectedCoinId}/market_chart?vs_currency=inr&days=10`;
+  const coinChartUrl = `https://api.coingecko.com/api/v3/coins/${selectedCoinId}/market_chart?vs_currency=${currency}&days=10`;
 
   const options = {
     method: 'GET',
@@ -18,7 +18,7 @@ function Coins() {
     params: {
       page: '1',
       sparkline: 'false',
-      vs_currency: 'usd',
+      vs_currency: currency,
       per_page: '100',
       order: 'market_cap_desc'
     },
@@ -43,7 +43,6 @@ function Coins() {
         //   `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`
         // )
         setCoinData(data.data);
-        const randomNumber = Number(Math.floor(Math.random() * 10));
         
         setSelectedCoin(coinData[Math.floor(Math.random()) * coinData.length]);
         console.log(selectedCoin)
