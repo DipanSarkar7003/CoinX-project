@@ -34,6 +34,7 @@ const Exchanges = () => {
 // RAPID API TESTING 
 
   async function getData() {
+    setIsLoading(true);
         
     try {
       const response = await axios.request(options);
@@ -42,7 +43,7 @@ const Exchanges = () => {
       console.error(error);
     }
 
-
+setIsLoading(false);
       }
       getData()
     } ,
@@ -53,14 +54,20 @@ const Exchanges = () => {
 
   return (
     <>
-    <h1 className="exchangesHeadding">Dont look "Idhar Udhar"here are top Exchanges of the <span>Market ...</span>
+     <h1 className="exchangesHeadding">Dont look "Idhar Udhar"here are top Exchanges of the <span>Market ...</span>
     </h1>
+    
+    {isLoading?<h1 style={{textAlign:"center" , fontSize:"3rem"}}> loading your data ...</h1>:<>
+    
+   
     {isLoading?<h1 style={{textAlign:"center"}}>loading...</h1>:
         <div className="exchanges">
           {data.map((item) => <ExchangeItem item={item} key={item.id}/>)}
           </div>
     }
-      </>
+    </>
+    }
+    </>
   );
 };
 

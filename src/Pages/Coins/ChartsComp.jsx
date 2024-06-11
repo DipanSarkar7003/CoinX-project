@@ -12,7 +12,7 @@ import {
   } from "chart.js";
   Chartjs.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
-const ChartsComp = ( {coinChartData}) => {
+const ChartsComp = ( {coinChartData , currency }) => {
     let prices = [];
     let date = [];
     for (let i = 0; i < coinChartData.length; i++) {
@@ -36,13 +36,16 @@ const ChartsComp = ( {coinChartData}) => {
     plugins: {
       title: {
         display: true,
-        text: `Currency Prices in $`,
+        text: `Currency Prices in ${currency}`,
       },
       legend: {
         position: "bottom",
       },
     },
     }
+    // console.log("card comp re rendered")
+    console.log(coinChartData)
+    // console.log(currency)
     
   return (
     <Line data={data} options={option} style={{width:"80vw" ,height:"100vw" , margin:"auto"}}/>
