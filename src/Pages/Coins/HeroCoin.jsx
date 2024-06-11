@@ -9,7 +9,6 @@ const HeroCoin = ({ selectedCoin, coinChartData , setCurrency , currency }) => {
 // console.log("changed currency")
 //   }
 
-  console.log(currency)
 
   return (
     <>

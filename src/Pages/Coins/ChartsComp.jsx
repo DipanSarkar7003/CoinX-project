@@ -43,9 +43,7 @@ const ChartsComp = ( {coinChartData , currency }) => {
       },
     },
     }
-    // console.log("card comp re rendered")
-    console.log(coinChartData)
-    // console.log(currency)
+ 
     
   return (
     <Line data={data} options={option} style={{width:"80vw" ,height:"100vw" , margin:"auto"}}/>

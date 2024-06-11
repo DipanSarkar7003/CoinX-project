@@ -45,8 +45,7 @@ function Coins() {
         setCoinData(data.data);
         
         setSelectedCoin(coinData[Math.floor(Math.random()) * coinData.length]);
-        console.log(selectedCoin)
-        console.log(coinData)
+      
 
         const {data:coinChartFetch} = await axios.get(coinChartUrl);
         setCoinChartData(coinChartFetch.prices);
@@ -55,7 +54,7 @@ function Coins() {
       }
     };
     fetchCoinData();
-  }, [currency]);
+  }, [currency, selectedCoinId]);
 
 
 
