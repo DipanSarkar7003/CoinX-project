@@ -58,8 +58,7 @@ const HeroCoin = ({ selectedCoin, coinChartData , setCurrency , currency }) => {
 
               <option value="inr"  >inr</option>
               <option value="usd"  >usd</option>
-              <option value="btc"  >btc</option>
-              <option value="eth"  >eth</option>
+              
            </select>
 
               </div>

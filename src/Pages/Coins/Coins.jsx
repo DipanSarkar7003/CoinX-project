@@ -10,7 +10,7 @@ function Coins() {
   const [coinChartData, setCoinChartData] = useState([]);
 
   // const coinUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en`;
-  const coinChartUrl = `https://api.coingecko.com/api/v3/coins/${selectedCoinId}/market_chart?vs_currency=${currency}&days=10`;
+  const coinChartUrl = `https://api.coingecko.com/api/v3/coins/${selectedCoinId}/market_chart?vs_currency=${currency}&days=1`;
 
   const options = {
     method: 'GET',
@@ -19,7 +19,7 @@ function Coins() {
       page: '1',
       sparkline: 'false',
       vs_currency: currency,
-      per_page: '100',
+      per_page: '25',
       order: 'market_cap_desc'
     },
     headers: {
@@ -45,6 +45,7 @@ function Coins() {
         setCoinData(data.data);
         
         setSelectedCoin(coinData[Math.floor(Math.random()) * coinData.length]);
+        console.log("fetching happened");
       
 
         const {data:coinChartFetch} = await axios.get(coinChartUrl);
