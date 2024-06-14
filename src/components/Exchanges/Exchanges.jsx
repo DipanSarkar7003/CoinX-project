@@ -21,7 +21,7 @@ const Exchanges = () => {
           method: 'GET',
           url: 'https://coingecko.p.rapidapi.com/exchanges',
           headers: {
-            'X-RapidAPI-Key': 'a2a99b7876msh36cbdc87e7994f6p1ea89cjsne927b97405b5',
+            'X-RapidAPI-Key': import.meta.env.VITE_EXCHANGES_CHART_API_KEY,
             'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
           }
         };

@@ -23,7 +23,7 @@ function Coins() {
       order: 'market_cap_desc'
     },
     headers: {
-      'x-rapidapi-key': 'a2a99b7876msh36cbdc87e7994f6p1ea89cjsne927b97405b5',
+      'x-rapidapi-key': import.meta.env.VITE_COINs_LIST_KEY,
       'x-rapidapi-host': 'coingecko.p.rapidapi.com'
     }
   };
@@ -50,6 +50,8 @@ function Coins() {
 
         const {data:coinChartFetch} = await axios.get(coinChartUrl);
         setCoinChartData(coinChartFetch.prices);
+        console.log(import.meta.env.VITE_COIN_LIST_KEY)
+
       } catch (error) {
         console.log(error);
       }
