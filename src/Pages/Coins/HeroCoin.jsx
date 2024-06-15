@@ -11,7 +11,8 @@ const HeroCoin = ({
   currency,
   setDays,
   days,
-  coinData
+  coinData,
+  setSelectedCoinId
 }) => {
   return (
     <div className="heroComp">
@@ -71,7 +72,7 @@ const HeroCoin = ({
           </div>
           <div className="heroCompMainPart" style={{display:"flex" , justifyContent:"space-between" , gap:"10px"}}>
           <ChartsComp coinChartData={coinChartData} currency={currency} />
-          <Coinstack coinData={coinData} />
+          <Coinstack coinData={coinData} setSelectedCoinId={setSelectedCoinId} />
           </div>
         </div>
       ) : (

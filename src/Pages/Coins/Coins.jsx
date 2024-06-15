@@ -63,6 +63,7 @@ function Coins() {
         setDays={setDays}
         days={days}
         coinData={coinData}
+        setSelectedCoinId={setSelectedCoinId}
       />
 
       <div className="Coins">
