@@ -27,8 +27,6 @@ function Coins() {
       'x-rapidapi-host': 'coingecko.p.rapidapi.com',
     },
   };
-  console.log(days)
-
   useEffect(() => {
     const fetchCoinData = async () => {
       try {
@@ -64,6 +62,7 @@ function Coins() {
         currency={currency}
         setDays={setDays}
         days={days}
+        coinData={coinData}
       />
 
       <div className="Coins">

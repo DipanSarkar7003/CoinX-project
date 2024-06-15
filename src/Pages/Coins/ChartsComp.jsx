@@ -46,7 +46,7 @@ const ChartsComp = ( {coinChartData , currency }) => {
  
     
   return (
-    <Line data={data} options={option} style={{width:"80vw" ,height:"100vw" , margin:"auto"}}/>
+    <Line data={data} options={option} style={{width:"50%"  , margin:"auto"}}/>
   )
 }
 
