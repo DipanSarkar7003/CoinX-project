@@ -13,28 +13,31 @@ const Coinstack = ({ coinData ,setSelectedCoinId }) => {
         border: "1px solid #dadada",
       }}
     >
-      {coinData.map((item, index) => (
+         
+      {coinData.map((item, index) => (<>
+       
         <li
-          key={index}
+          key={item.id}
           id={item.id}
           className="CoinstackItem"
           onClick={() => setSelectedCoinId(item.id)}
           style={{
-            listStyleType: "none",
-            display: "flex",
-            gap: "0.2rem",
-            borderBottom: "1px solid #dadada",
-            padding: "10px 3px",
-            cursor: "pointer",
-            fontWeight: "bold",
-            fontSize: "0.8rem",
-            textTransform: "uppercase",
-           
-          }}
-        >
+              listStyleType: "none",
+              display: "flex",
+              gap: "0.2rem",
+              borderBottom: "1px solid #dadada",
+              padding: "10px 3px",
+              cursor: "pointer",
+              fontWeight: "bold",
+              fontSize: "0.8rem",
+              textTransform: "uppercase",
+              
+            }}
+            >
           <img src={item.image} alt="" style={{ width: "20px" }} />
           <p style={{ textWrap: "nowrap" }}>{item.name}</p>
         </li>
+      </>
       ))}{" "}
     </div>
   );
