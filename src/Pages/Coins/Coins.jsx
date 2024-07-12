@@ -13,20 +13,21 @@ function Coins() {
 
   const coinChartUrl = `https://api.coingecko.com/api/v3/coins/${selectedCoinId}/market_chart?vs_currency=${currency}&days=${days}`;
   const options = {
-    method: 'GET',
-    url: 'https://coingecko.p.rapidapi.com/coins/markets',
+    method: "GET",
+    url: "https://coingecko.p.rapidapi.com/coins/markets",
     params: {
-      page: '1',
-      sparkline: 'false',
+      page: "1",
+      sparkline: "false",
       vs_currency: currency,
-      per_page: '25',
-      order: 'market_cap_desc',
+      per_page: "25",
+      order: "market_cap_desc",
     },
     headers: {
-      'x-rapidapi-key': import.meta.env.VITE_COINs_LIST_KEY,
-      'x-rapidapi-host': 'coingecko.p.rapidapi.com',
+      "x-rapidapi-key": import.meta.env.VITE_COINs_LIST_KEY,
+      "x-rapidapi-host": "coingecko.p.rapidapi.com",
     },
   };
+
   useEffect(() => {
     const fetchCoinData = async () => {
       try {
@@ -34,17 +35,20 @@ function Coins() {
         setCoinData(data.data);
 
         if (data.data.length && !selectedCoin) {
-          setSelectedCoin(data.data[Math.floor(Math.random() * data.data.length)]);
+          setSelectedCoin(
+            data.data[Math.floor(Math.random() * data.data.length)]
+          );
         }
 
         const { data: coinChartFetch } = await axios.get(coinChartUrl);
         setCoinChartData(coinChartFetch.prices);
+        console.log(coinChartData);
       } catch (error) {
         console.log(error);
       }
     };
     fetchCoinData();
-  }, [currency, selectedCoinId ,days]);
+  }, [currency, selectedCoinId, days]);
 
   useEffect(() => {
     const thatCoin = coinData.find((coin) => coin.id === selectedCoinId);
@@ -52,6 +56,8 @@ function Coins() {
       setSelectedCoin(thatCoin);
     }
   }, [selectedCoinId]);
+
+  console.log("component rendered")
 
   return (
     <>
