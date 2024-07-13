@@ -9,7 +9,7 @@ import ErrorPage from './components/ErrorPage'
 function App() {
 
   return (
-  
+   
     
     <BrowserRouter>
     <Navbar/>
@@ -20,7 +20,6 @@ function App() {
   <Route path='*' element={<ErrorPage/>}/>
 </Routes>
 </BrowserRouter>
-
   )
 }
 

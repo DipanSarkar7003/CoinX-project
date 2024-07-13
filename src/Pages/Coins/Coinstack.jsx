@@ -14,10 +14,10 @@ const Coinstack = ({ coinData ,setSelectedCoinId }) => {
       }}
     >
          
-      {coinData.map((item, index) => (<>
+      {coinData.map((item , index) => (<>
        
         <li
-          key={item.id}
+          key = {item.id}
           id={item.id}
           className="CoinstackItem"
           onClick={() => setSelectedCoinId(item.id)}

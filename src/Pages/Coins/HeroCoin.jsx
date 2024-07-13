@@ -12,13 +12,20 @@ const HeroCoin = ({
   setDays,
   days,
   coinData,
-  setSelectedCoinId
+  setSelectedCoinId,
 }) => {
   return (
     <div className="heroComp">
       {selectedCoin ? (
         <div className="heroCoinBanner">
-          <div className="heroCoinInfoPart" style={{display:"flex" , justifyContent:"space-between" , alignItems:"center" }}>
+          <div
+            className="heroCoinInfoPart"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             <div className=" heroCompLeftPart" style={{}}>
               <img
                 src={selectedCoin.image}
@@ -65,14 +72,27 @@ const HeroCoin = ({
               </p>
             </div>
 
-            <div className="heroCompRightPart" style={{  width:"50%" , textAlign:"right"}}>
-             <Currency setCurrency={setCurrency}/>
+            <div
+              className="heroCompRightPart"
+              style={{ width: "50%", textAlign: "right" }}
+            >
+              <Currency setCurrency={setCurrency} />
               <Days setDays={setDays} days={days} />
             </div>
           </div>
-          <div className="heroCompMainPart" style={{display:"flex" , justifyContent:"space-between" , gap:"10px"}}>
-          <ChartsComp coinChartData={coinChartData} currency={currency} />
-          <Coinstack coinData={coinData} setSelectedCoinId={setSelectedCoinId} />
+          <div
+            className="heroCompMainPart"
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: "10px",
+            }}
+          >
+            <ChartsComp coinChartData={coinChartData} currency={currency} />
+            <Coinstack
+              coinData={coinData}
+              setSelectedCoinId={setSelectedCoinId}
+            />
           </div>
         </div>
       ) : (
