@@ -1,21 +1,29 @@
 /* filter: drop-shadow(0 0 2em #61dafbaa); */
 
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  max-width: 100vw;
+}
+
 .navbar {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-around;
   align-items: center;
-  /* width: 100%; */
+  width: 100%;
   /* background-color: blueviolet; */
-  padding: 2% 0;
+  padding: 2% 6%;
   /* gap: 30%; */
 }
 
 .logo {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    text-decoration: none;
-    color: #DFE0D7;
-    font-weight: 700;
+  text-decoration: none;
+  color: #dfe0d7;
+  font-weight: 700;
   font-size: 2.5rem;
   cursor: pointer;
 }
@@ -24,7 +32,9 @@
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
-  gap: 20%;
+  align-items: flex-end;
+  /* gap: 20%; */
+  /* background-color: #00d964; */
 }
 
 .listItem {
@@ -32,6 +42,8 @@
   font-size: 1.2rem;
   color: whitesmoke;
   text-decoration: none;
+  text-align: right;
+  /* background-color: #073b1f; */
 }
 .active {
   color: #41d1ff;
@@ -143,16 +155,16 @@
 }
 
 /* ACCORDIAN PART STYLING STARTS HERE  */
-.accordionHeadding{
+.accordionHeadding {
   text-align: center;
-  text-wrap: nowrap;
+  /* text-wrap: nowrap; */
   padding: 3% 0;
   /* background-color: #06242f; */
   font-weight: 400;
   margin-top: 7%;
   font-size: 2.3rem;
 }
-.accordionHeadding span{
+.accordionHeadding span {
   color: skyblue;
 }
 .accordion {
@@ -165,6 +177,7 @@
 }
 .accordionItem {
   display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: #2d2d2d;
   justify-content: space-evenly;
@@ -174,20 +187,38 @@
   box-shadow: 1px 2px 13px blueviolet;
   border-radius: 10px;
 }
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3%;
+}
 .itemText {
   background-color: #2d2d2d;
-  padding: 3% 9%;
+  padding: 0 9%;
+
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
 }
 .itemIcon {
   cursor: pointer;
 }
 
-.open{
-  color:rgba(188, 248, 98, 0.707) ;
+.open .itemIcon,
+.open .itemTitle,
+.open .itemCount {
+  color: rgba(188, 248, 98, 0.707);
+}
+
+.open .itemText {
+  /* overflow: scroll; */
+  height: 150px;
+  padding: 3% 9%;
 }
 
 /* EXCHANGE STYLING STARTS HERE  */
-.exchanges{
+.exchanges {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
@@ -198,17 +229,17 @@
   /* gap: 3%; */
   padding: 0 5%;
 }
-.exchangesHeadding{
+.exchangesHeadding {
   text-align: center;
   text-wrap: nowrap;
   font-size: 2rem;
   font-weight: 400;
   padding: 5% 0;
 }
-.exchangesHeadding span{
-  color:#41d1ff;
+.exchangesHeadding span {
+  color: #41d1ff;
 }
-.exchangeItem{
+.exchangeItem {
   background-color: #202127;
   display: flex;
   flex-direction: column;
@@ -218,15 +249,14 @@
   position: relative;
   border-radius: 20px;
   cursor: pointer;
-
 }
-.exchangeItem:hover{
-  background-color:#1b1c21 ;
+.exchangeItem:hover {
+  background-color: #1b1c21;
   transform: translateY(-5px);
   transition: ease 0.1s;
 }
 .exchangeItem h3 {
-  color:#DFE0D7 ;
+  color: #dfe0d7;
   padding: 5% 0;
 }
 
@@ -235,50 +265,50 @@
   border-radius: 10px;
 }
 .exchangeItem p {
-  color: #6F6E77;
+  color: #6f6e77;
   padding: 3% 0;
 }
 .exchangeItem a {
- 
-  color:#DFE0D7 ;
+  color: #dfe0d7;
   text-decoration: none;
 }
-.exchangeItem button{
-margin: 3% 0;
+.exchangeItem button {
+  margin: 3% 0;
 }
-.score{
+.score {
   position: absolute;
-  top: 5% ;
+  top: 5%;
   right: 5%;
 }
 
 /* STYLING FOR COINS STARTS HERE  */
 
-.Coins{
+.Coins {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-self: center;
   justify-content: center;
   column-gap: 3%;
-  row-gap: 1%;
+  row-gap: 3%;
   /* gap: 3%; */
   padding: 0 5%;
   margin-top: 4rem;
 }
 
- /* UI VERSE COIN ITEM  STYLING  */
- .coinImage{
-  width:5rem;
+/* UI VERSE COIN ITEM  STYLING  */
+.coinImage {
+  width: 5rem;
   /* padding-bottom: 4rem; */
   margin: auto;
- }
+}
 
- .card {
+.card {
   position: relative;
   width: 190px;
   height: 254px;
-  background-color: #000;
+  background-color: #242424;
+  ;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -290,7 +320,7 @@ margin: 3% 0;
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   left: -5px;
@@ -298,7 +328,7 @@ margin: 3% 0;
   width: 200px;
   height: 264px;
   border-radius: 10px;
-  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
   z-index: -10;
   pointer-events: none;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -309,7 +339,7 @@ margin: 3% 0;
   z-index: -1;
   position: absolute;
   inset: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
   transform: translate3d(0, 0, 0) scale(0.95);
   filter: blur(20px);
 }
@@ -337,10 +367,7 @@ margin: 3% 0;
   transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
 }
 
-
-
-
-.coinItem{
+.coinItem {
   background-color: #202127;
   display: flex;
   flex-direction: column;
@@ -351,31 +378,37 @@ margin: 3% 0;
   border-radius: 20px;
   cursor: pointer;
 }
-.coinItem img{
+.coinItem img {
   width: 40px;
   border-radius: 10px;
 }
-.coinItem h3{
-  color:#DFE0D7 ;
+.coinItem h3 {
+  color: #dfe0d7;
   padding: 5% 0;
 }
-.coinItem p  {
-  color: #6F6E77;
+.coinItem p {
+  color: #6f6e77;
   padding: 3% 0;
 }
-.priceDown{
-  color: #BA0402;
+.priceDown {
+  color: #ba0402;
 }
-.priceUp{
- color:  #00D964;
+.priceUp {
+  color: #00d964;
 }
-.heroCoinBanner{
+.heroCoinBanner {
   width: 90%;
   margin: auto;
 }
-.SelectedCoinImage{
+.SelectedCoinImage {
   width: 50px;
 }
-.SelectedCoinName{
+.SelectedCoinName {
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    /* background-color: red; */
+  }
 }
