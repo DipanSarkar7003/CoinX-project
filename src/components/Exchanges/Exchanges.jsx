@@ -29,8 +29,6 @@ const Exchanges = () => {
   useEffect(
     () =>{
 
-    
-
 // RAPID API TESTING 
 
   async function getData() {
@@ -47,9 +45,7 @@ setIsLoading(false);
       }
       getData()
     } ,
-      
-    []
-    
+    [] // only re-run effect if data changes
   );
 
   return (
