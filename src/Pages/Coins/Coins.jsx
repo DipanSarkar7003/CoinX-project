@@ -30,6 +30,7 @@ function Coins() {
 
   useEffect(() => {
     const fetchCoinData = async () => {
+      console.log("Fetching");
       try {
         const data = await axios.request(options);
         setCoinData(data.data);
@@ -42,7 +43,7 @@ function Coins() {
 
         const { data: coinChartFetch } = await axios.get(coinChartUrl);
         setCoinChartData(coinChartFetch.prices);
-        console.log(coinChartData);
+        console.table(coinChartData);
       } catch (error) {
         console.log(error);
       }
@@ -57,7 +58,7 @@ function Coins() {
     }
   }, [selectedCoinId]);
 
-  console.log("component rendered")
+  console.log("component rendered");
 
   return (
     <>
