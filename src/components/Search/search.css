@@ -1,0 +1,10 @@
+.search-Btn {
+  border-radius: 50px;
+  outline: none;
+  padding: 1rem 1.5rem;
+  border: none;
+}
+.search-Btn:active {
+  background-color: #575656;
+  scale: 0.9;
+}
