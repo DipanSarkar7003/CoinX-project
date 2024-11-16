@@ -11,7 +11,7 @@ function Coins() {
   const [selectedCoin, setSelectedCoin] = useState(null);
   const [coinChartData, setCoinChartData] = useState([]);
 
-  const coinChartUrl = `api/v3/coins/${selectedCoinId}/market_chart?vs_currency=${currency}&days=${days}`;
+  const coinChartUrl = `https://api.coingecko.com/api/v3/coins/${selectedCoinId}/market_chart?vs_currency=${currency}&days=${days}`;
   const options = {
     method: "GET",
     url: "https://coingecko.p.rapidapi.com/coins/markets",
@@ -30,7 +30,7 @@ function Coins() {
 
   useEffect(() => {
     const fetchCoinData = async () => {
-      console.log("Fetching")
+      console.log("Fetching");
       try {
         const data = await axios.request(options);
         setCoinData(data.data);
@@ -58,7 +58,7 @@ function Coins() {
     }
   }, [selectedCoinId]);
 
-  console.log("component rendered")
+  console.log("component rendered");
 
   return (
     <>
