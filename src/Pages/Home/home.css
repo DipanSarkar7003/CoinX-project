@@ -1,136 +1,203 @@
-
 .searchBox {
-    display: flex;
-    /* flex-direction: column; */
-    gap: 2%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+  align-items: center;
+}
+.searchBox input {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  color: #848484;
+  font-size: medium;
+  text-transform: capitalize;
+  width: 50%;
+}
+
+.Hero-Banner {
+  /* width: 70%; */
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  padding-top: 5%;
+}
+.BannerTop {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.bannerMainText {
+  font-size: 3.8rem;
+  line-height: 70px;
+}
+.bannerMainText span {
+  background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.bannerTextPart p {
+  padding-top: 5%;
+  color: #98989f;
+  font-size: 24px;
+  text-wrap: wrap;
+  font-weight: 700;
+}
+.bannerImage {
+  filter: drop-shadow(9em 2em 8em #f630cbbf) drop-shadow(-9em -2em 8em #866cf9);
+
+  aspect-ratio: 4px 4px;
+  object-fit: contain;
+  width: 300px;
+  animation: up-down linear 3s infinite;
+}
+
+@keyframes up-down {
+  25% {
+    transform: translateY(15px);
   }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.Btn {
+  padding: 2% 2.5%;
+  /* color: #ff8787; */
+  border: none;
+  border-radius: 30px;
+  /* background-image: linear-gradient(#f630cbbf #866cf9); */
+  /* background:-webkit-linear-gradient( 120deg, #bd34fe 30%, #41d1ff ); */
+
+  font-size: medium;
+  cursor: pointer;
+}
+.Btn:hover {
+  color: rgb(196, 195, 195);
+  background-color: rgb(61, 60, 60);
+  transition: ease 100ms;
+}
+.Btn:active {
+  scale: 0.9;
+  animation-duration: 100ms;
+}
+.bannerButtons {
+  margin-top: 5%;
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ACCORDIAN PART STYLING STARTS HERE  */
+.accordionHeadding {
+  text-align: center;
+  padding: 2rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  font-size: 2.3rem;
+}
+.accordionHeadding span {
+  color: skyblue;
+}
+.accordion {
+  padding: 0 2rem;
+  margin: 0px auto;
+  gap: 1rem;
+  margin-bottom: 5%;
+  width: 700px;
+  max-width: 95%;
+}
+.accordionItem {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #2d2d2d;
+  justify-content: space-evenly;
+  padding: 3% 0;
+  font-size: 1.3rem;
+  margin: 2% 0;
+  box-shadow: 1px 2px 13px blueviolet;
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3%;
+}
+.itemText {
+  background-color: #2d2d2d;
+  padding: 0 9%;
+
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.itemIcon {
+  cursor: pointer;
+}
+
+.open .itemIcon,
+.open .itemTitle,
+.open .itemCount {
+  color: rgba(188, 248, 98, 0.707);
+}
+
+.open .itemText {
+  height: 150px;
+  padding: 3% 9%;
+}
+
+@media screen and (max-width: 768px) {
   .searchBox input {
-    width: 30%;
-    padding: 1.2%;
-    border: none;
-    /* border-radius:50%; */
-    border-radius: 50px;
-    background-color: #f5f5f5;
-    color: #848484;
-    font-size: medium;
+    font-size: 12px;
   }
-  
+
   .Hero-Banner {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: auto;
-    padding-top: 5%;
-    /* background-color: #ff8787; */
-  }
-  .BannerTop {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-  }
-  .bannerMainText {
-    font-size: 3.8rem;
-    line-height: 70px;
-  }
-  .bannerMainText span {
-    /* color:#ff8787; */
-    background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
-    color: transparent;
-    -webkit-background-clip: text;
-  }
-  .bannerTextPart p {
-    padding-top: 5%;
-    color: #98989f;
-    font-size: 24px;
-    text-wrap: wrap;
-    font-weight: 700;
+    padding: 2rem;
   }
   .bannerImage {
-    filter: drop-shadow(9em 2em 8em #f630cbbf) drop-shadow(-9em -2em 8em #866cf9);
-    /* filter: drop-shadow(0px 0px 40px rgba(255, 0, 0, )) */
-    /* drop-shadow(0px 0px 20px rgba(0, 0, 255, 0.5)); */
-  
-    /* background-color: aqua; */
-    aspect-ratio: 4px 4px;
-    object-fit: contain;
-    width: 300px;
-    animation: up-down linear 3s infinite;
+    display: none;
   }
-  
-  @keyframes up-down {
-    25% {
-      transform: translateY(15px);
-    }
-    50% {
-      transform: translateY(0px);
-    }
-    75% {
-      transform: translateY(-15px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
-  
-  .Btn {
-    padding: 2% 2.5%;
-    /* color: #ff8787; */
-    border: none;
-    border-radius: 30px;
-    /* background-image: linear-gradient(#f630cbbf #866cf9); */
-    /* background:-webkit-linear-gradient( 120deg, #bd34fe 30%, #41d1ff ); */
-  
-    font-size: medium;
-    cursor: pointer;
-  }
-  .Btn:hover {
-    color: rgb(196, 195, 195);
-    background-color: rgb(61, 60, 60);
-    transition: ease 100ms;
-  }
-  .Btn:active {
-    scale: 0.9;
-    animation-duration: 100ms;
-  }
-  .bannerButtons {
-    margin-top: 5%;
-    gap: 3%;
-    display: flex;
-  }
-  
-  /* ACCORDIAN PART STYLING STARTS HERE  */
   .accordionHeadding {
     text-align: center;
-    /* text-wrap: nowrap; */
-    padding: 3% 0;
-    /* background-color: #06242f; */
-    font-weight: 400;
-    margin-top: 7%;
-    font-size: 2.3rem;
-  }
-  .accordionHeadding span {
-    color: skyblue;
+    padding: 1rem;
+    margin-top: 1rem;
   }
   .accordion {
-    width: 700px;
-    margin: 0px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 5%;
+    padding: 0 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .accordionHeadding {
+    font-size: 30px;
   }
   .accordionItem {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: #2d2d2d;
-    justify-content: space-evenly;
-    padding: 3% 0;
-    font-size: 1.3rem;
-    margin: 2% 0;
-    box-shadow: 1px 2px 13px blueviolet;
-    border-radius: 10px;
+    font-size: 15px;
   }
+}
+@media screen and (max-width: 480px) {
+  .searchBox {
+    display: none;
+  }
+
+  .Hero-Banner {
+    padding: 1rem;
+  }
+  .bannerMainText {
+    font-size: 3rem;
+    line-height: 1.3;
+  }
+  .bannerImage {
+    display: none;
+  }
+}
