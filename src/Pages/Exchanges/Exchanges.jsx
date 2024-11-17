@@ -23,8 +23,9 @@ const Exchanges = () => {
         setIsLoading(true);
         try {
           const response = await axios.request(options);
-          setData(response.data);
-          console.log(response.data);
+          const finalData = response.data.slice(0, 12);
+          setData(finalData);
+          console.log(finalData);
         } catch (error) {
           console.error(error);
         }
