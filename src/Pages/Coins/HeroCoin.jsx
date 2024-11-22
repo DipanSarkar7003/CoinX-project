@@ -18,32 +18,15 @@ const HeroCoin = ({
     <div className="heroComp">
       {selectedCoin ? (
         <div className="heroCoinBanner">
-          <div
-            className="heroCoinInfoPart"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <div className=" heroCompLeftPart" style={{}}>
+          <div className="heroCoinInfoPart">
+            <div className=" heroCompLeftPart">
               <img
                 src={selectedCoin.image}
                 alt=""
                 className="SelectedCoinImage"
               />
               <h1 className="SelectedCoinName">
-                {selectedCoin.name}{" "}
-                <span
-                  style={{
-                    textTransform: "uppercase",
-                    fontWeight: "300",
-                    color: "orange",
-                    fontSize: "1rem",
-                  }}
-                >
-                  {selectedCoin.symbol}
-                </span>{" "}
+                {selectedCoin.name} <span>{selectedCoin.symbol}</span>{" "}
               </h1>
               <p>
                 <strong>price :</strong> {selectedCoin.current_price} {"  "}
@@ -72,23 +55,13 @@ const HeroCoin = ({
               </p>
             </div>
 
-            <div
-              className="heroCompRightPart"
-              style={{ width: "50%", textAlign: "right" }}
-            >
+            <div className="heroCompRightPart">
               <Currency setCurrency={setCurrency} />
               <Days setDays={setDays} days={days} />
             </div>
           </div>
-          <div
-            className="heroCompMainPart"
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "10px",
-            }}
-          >
-            <ChartsComp coinChartData={coinChartData} currency={currency} />
+          <div className="heroCompMainPart">
+            <ChartsComp coinChartData={coinChartData} currency={currency} days={days} />
             <Coinstack
               coinData={coinData}
               setSelectedCoinId={setSelectedCoinId}

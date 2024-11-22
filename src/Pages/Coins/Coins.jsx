@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import HeroCoin from "./HeroCoin";
 import CoinItem from "./CoinItem";
+import "./coins.css";
 
 function Coins() {
   const [currency, setCurrency] = useState("inr");
@@ -59,6 +60,7 @@ function Coins() {
   }, [selectedCoinId]);
 
   console.log("component rendered");
+  console.log(coinData);
 
   return (
     <>
@@ -80,6 +82,7 @@ function Coins() {
             selectedCoinId={selectedCoinId}
             setSelectedCoinId={setSelectedCoinId}
             key={item.id}
+            currency={currency}
           />
         ))}
       </div>

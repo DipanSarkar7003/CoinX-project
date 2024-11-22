@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Coins from "./Pages/Coins/Coins";
 import ErrorPage from "./components/ErrorPage";
 import SingleExchange from "./Pages/singleExchange/SingleExchange";
+import SingleCoin from "./Pages/SingleCoin/SingleCoin";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/exchanges" element={<Exchanges />} />
         <Route path="/exchanges/:id" element={<SingleExchange />} />
         <Route path="/coins" element={<Coins />} />
+        <Route path="/coins/:id" element={<SingleCoin />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
