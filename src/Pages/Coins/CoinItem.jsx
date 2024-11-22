@@ -1,6 +1,8 @@
-import React from "react";
+import CurrencySymbol from "../../components/CurrencySymbol";
+import { GoArrowUpRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 
-function CoinItem({ item, setSelectedCoinId }) {
+function CoinItem({ item, setSelectedCoinId, currency }) {
   return (
     <div
       className="card "
@@ -8,11 +10,21 @@ function CoinItem({ item, setSelectedCoinId }) {
       id={item.id}
       onClick={() => setSelectedCoinId(item.id)}
     >
-      <img src={item.image} alt="" className="coinImage" />
-
-      <p className="heading">{item.name} </p>
-      <p>
-        price: {item.current_price} {"  "}
+      <div className="coinCardTop">
+        <div className="coinCardTop_left">
+          <img src={item.image} alt="" className="coinImage" />
+          <span>
+            <p className="heading">{item.name} </p>
+            <span className="symbol">{item.symbol}</span>
+          </span>
+        </div>
+        <Link to={`/coins/${item.id}`} className="coinCardTop_right" type="button">
+          <GoArrowUpRight />
+        </Link>
+      </div>
+      <p className="price">
+        <span className="currencySymbolWrapper"></span>
+        <CurrencySymbol currency={currency} /> {item.current_price} {"  "}
         <span
           className={
             item.price_change_percentage_24h < 0 ? "priceDown" : "priceUp"
@@ -27,6 +39,10 @@ function CoinItem({ item, setSelectedCoinId }) {
           )}{" "}
         </span>
       </p>
+      <p className="market_cap">
+        Market Cap: <CurrencySymbol currency={currency} /> {item.market_cap}
+      </p>
+      <p className="volume">Total volume: {item.total_volume}</p>
     </div>
   );
 }
