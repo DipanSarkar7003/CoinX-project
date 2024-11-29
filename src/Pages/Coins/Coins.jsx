@@ -21,7 +21,7 @@ function Coins() {
       page: "1",
       sparkline: "false",
       vs_currency: currency,
-      per_page: "10",
+      per_page: "12",
       order: "market_cap_desc",
     },
     headers: {
@@ -58,9 +58,6 @@ function Coins() {
       setSelectedCoin(thatCoin);
     }
   }, [selectedCoinId]);
-
-  console.log("component rendered");
-  console.log(coinData);
 
   return (
     <>

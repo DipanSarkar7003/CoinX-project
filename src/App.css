@@ -1,9 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body,
 html {
   margin: 0;
   padding: 0;
-  max-width: 100vw;
-  /* overflow-x: hidden; */
+  /* width: 100%; */
+  /* max-width: 100vw; */
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 .btn-ui {
   border-radius: 50px;
