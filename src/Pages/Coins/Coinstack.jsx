@@ -1,4 +1,5 @@
 import React from "react";
+import PriceMaking from "../../components/PriceMarking/PriceMaking";
 
 const Coinstack = ({ coinData, setSelectedCoinId }) => {
   coinData.length = 10;
@@ -15,19 +16,8 @@ const Coinstack = ({ coinData, setSelectedCoinId }) => {
           >
             <img src={item.image} alt="" style={{ width: "20px" }} />
             <p style={{ textWrap: "nowrap" }}>{item.name}</p>
-            <span
-              className={
-                item.price_change_percentage_24h < 0 ? "priceDown" : "priceUp"
-              }
-            >
-              {Math.round(item.price_change_percentage_24h).toFixed(2)}
-              {"% "}
-              {item.price_change_percentage_24h < 0 ? (
-                <span>&#x2B9F;</span>
-              ) : (
-                <span>&#x2B9D;</span>
-              )}{" "}
-            </span>
+
+            <PriceMaking coin={item} />
           </li>
         </>
       ))}{" "}

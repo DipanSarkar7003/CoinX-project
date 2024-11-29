@@ -12,7 +12,7 @@ const Currency = ({ setCurrency }) => {
         gap: "1rem",
       }}
     >
-      <label htmlFor="currency"> select the currency</label>
+      <label id="currency_label" htmlFor="currency"> select the currency</label>
       <select
         name="currency"
         id="currency"

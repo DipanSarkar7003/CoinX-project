@@ -3,3 +3,7 @@ VITE_COINs_LIST_KEY=
 VITE_EXCHANGES_CHART_API_KEY=
 
 VITE_COIN_CHART_API_KEY= 
+
+i got this api key  directly form Coin geco website , rapid api dont provide search option 
+
+VITE_SEARCH_QUERY_API_KEY = 

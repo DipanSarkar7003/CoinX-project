@@ -1,0 +1,40 @@
+.singleCoinTopPart {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.chartCompWrapper {
+  padding: 0 1rem;
+}
+
+/* Single Coin Details Box Starts Here */
+.coinDetails-box {
+  padding: 0 1rem;
+}
+.detail_box_top {
+  display: flex;
+  /* grid-template-columns: auto auto auto; */
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.price_details {
+  /* text-align: right; */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eye_icon {
+  font-size: 2rem;
+  /* border: 2px solid violet; */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  color: rgb(21, 253, 32);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 1rem;
+}

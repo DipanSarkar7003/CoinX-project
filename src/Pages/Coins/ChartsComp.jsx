@@ -26,6 +26,7 @@ const ChartsComp = ({ coinChartData, currency, days }) => {
     date.push(new Date(coinChartData[i][0]).toLocaleDateString());
     prices.push(coinChartData[i][1]);
   }
+
   let data = {
     labels: date,
     datasets: [
@@ -48,6 +49,14 @@ const ChartsComp = ({ coinChartData, currency, days }) => {
       },
       legend: {
         position: "bottom",
+      },
+    },
+    scales: {
+      y: {
+        title: {
+          display: true,
+          text: "Prices",
+        },
       },
     },
   };

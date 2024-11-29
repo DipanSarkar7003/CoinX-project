@@ -8,6 +8,7 @@
 .heroCoinInfoPart {
   display: flex;
   justify-content: space-between;
+  /* padding: 0 1rem; */
 }
 .heroCompRightPart {
   display: flex;
@@ -18,7 +19,13 @@
   display: flex;
   gap: 1rem;
 }
-
+.day {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  text-wrap: nowrap;
+}
 .heroCompMainPart {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -55,8 +62,8 @@
   align-items: center;
   justify-self: space-between;
   justify-content: center;
-  column-gap: 3%;
-  row-gap: 3%;
+  column-gap: 1rem;
+  row-gap: 1rem;
   padding: 0 2rem;
   margin-top: 4rem;
 }
@@ -228,8 +235,25 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .currency {
+  #currency_label {
     display: none;
+  }
+  #currency {
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+
+  .day {
+    padding: 0;
+    background-color: transparent;
+    color: #6f6e77;
+  }
+  .heroCoinBanner {
+    padding: 0;
+  }
+  .heroCoinInfoPart {
+    padding: 1rem;
   }
 }
 @media screen and (max-width: 572px) {

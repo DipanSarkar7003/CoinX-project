@@ -3,6 +3,7 @@ import ChartsComp from "./ChartsComp";
 import Days from "./Days";
 import Currency from "./Currency";
 import Coinstack from "./Coinstack";
+import PriceMaking from "../../components/PriceMarking/PriceMaking";
 
 const HeroCoin = ({
   selectedCoin,
@@ -30,7 +31,7 @@ const HeroCoin = ({
               </h1>
               <p>
                 <strong>price :</strong> {selectedCoin.current_price} {"  "}
-                <span
+                {/* <span
                   className={
                     selectedCoin.price_change_percentage_24h < 0
                       ? "priceDown"
@@ -46,7 +47,8 @@ const HeroCoin = ({
                   ) : (
                     <span>&#x2B9D;</span>
                   )}{" "}
-                </span>
+                </span> */}
+                <PriceMaking coin={selectedCoin} />
               </p>
               <p> {selectedCoin.description}</p>
               <p>
@@ -61,7 +63,11 @@ const HeroCoin = ({
             </div>
           </div>
           <div className="heroCompMainPart">
-            <ChartsComp coinChartData={coinChartData} currency={currency} days={days} />
+            <ChartsComp
+              coinChartData={coinChartData}
+              currency={currency}
+              days={days}
+            />
             <Coinstack
               coinData={coinData}
               setSelectedCoinId={setSelectedCoinId}
