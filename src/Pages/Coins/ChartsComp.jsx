@@ -22,19 +22,35 @@ Chartjs.register(
 const ChartsComp = ({ coinChartData, currency, days }) => {
   let prices = [];
   let date = [];
+  let color;
+  let bgcolor;
   for (let i = 0; i < coinChartData.length; i++) {
     date.push(new Date(coinChartData[i][0]).toLocaleDateString());
     prices.push(coinChartData[i][1]);
   }
 
+  if (prices.length === 0) {
+    return <h1>No Data Found</h1>;
+  }
+
+  const firstPrice = prices[0];
+  const lastPrice = prices[prices.length - 1];
+
+  if (firstPrice < lastPrice) {
+    color = "green";
+    bgcolor = "lightgreen";
+  } else {
+    color = "red";
+    bgcolor = "lightcoral";
+  }
   let data = {
     labels: date,
     datasets: [
       {
         label: `Prices`,
         data: prices,
-        borderColor: "green",
-        backgroundColor: "rgba(255,99,132,0.2)",
+        borderColor: color,
+        backgroundColor: bgcolor,
         borderWidth: 1,
       },
     ],

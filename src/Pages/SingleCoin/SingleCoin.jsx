@@ -74,7 +74,7 @@ function SingleCoin() {
   return (
     <>
       <div className="singleCoinTopPart">
-        <div className="coinDetails-box">
+        <div className="logo-details">
           <img src={`${singleCoinData?.image?.small}`} alt="" />
           <h3>{singleCoinData?.name}</h3>
         </div>
@@ -95,8 +95,12 @@ function SingleCoin() {
           <div className="name_details">
             <h1>{singleCoinData.name}</h1>
             <div className="additional">
-              <h5>Symbol : {singleCoinData.symbol}</h5>
-              <h5>Rank : {singleCoinData.market_cap_rank}</h5>
+              <h5>
+                Symbol : <span className="">{singleCoinData.symbol}</span>
+              </h5>
+              <h5>
+                Rank :<span className="">{singleCoinData.market_cap_rank}</span>
+              </h5>
             </div>
           </div>
 
@@ -117,11 +121,46 @@ function SingleCoin() {
           </div>
         </div>
 
-        <h3>
-          24H Volume :{" "}
-          {singleCoinData.market_data?.total_volume?.[currency] ||
-            "no data found "}
-        </h3>
+        <div className="detail_box_main">
+          <div className="detail_box_main_left">
+            <div className="market_cap_details details_flex">
+              <small>Market Cap</small>
+              <p>
+                {singleCoinData?.market_data?.market_cap?.[currency] ||
+                  "No Data found"}{" "}
+                {currency}
+              </p>
+            </div>
+
+            <div className="volume_24h_details details_flex">
+              <small>24H Volume</small>
+              <p>
+                {singleCoinData?.market_data?.total_volume?.[currency] ||
+                  "No Data found"}{" "}
+                {currency}
+              </p>
+            </div>
+            <div className="current_supply_details details_flex">
+              <small>Circulating Supply</small>
+              <p>
+                {singleCoinData?.market_data?.circulating_supply ||
+                  "No Data found"}
+              </p>
+            </div>
+          </div>
+          <div className="detail_box_main_right">
+            <h3>All Time High</h3>
+            <h3>
+              {singleCoinData?.market_data?.ath?.[currency] || "No Data found"}
+            </h3>
+            <PriceMaking coin={singleCoinData.market_data} />
+            <h3>All Time Low</h3>
+            <h3>
+              {singleCoinData?.market_data?.atl?.[currency] || "No Data found"}
+            </h3>
+            <PriceMaking coin={singleCoinData.market_data} />
+          </div>
+        </div>
       </div>
     </>
   );
