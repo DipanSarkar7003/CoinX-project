@@ -1,14 +1,15 @@
-
-.singleCoinImage{
-  width: 8rem;
+.singleCoinImage {
+  /* width: 8rem; */
 }
-.sinngleCoinTopName{
+.sinngleCoinTopName {
   text-align: center;
 }
 .singleCoinTopPart {
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
+  align-items: baseline;
+  margin-bottom: 1rem;
 }
 .chartCompWrapper {
   padding: 0 1rem;
@@ -69,7 +70,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
-  align-items: top;
+  align-items: flex-start;
 }
 .green {
   color: rgb(18, 223, 18) !important;
@@ -85,5 +86,34 @@
     gap: 5px;
     align-items: flex-start;
     border-bottom: 1px solid rgb(68, 67, 67);
+  }
+}
+@media (max-width: 575px) {
+  .detail_box_top {
+    margin-bottom: 2rem;
+  }
+  .detail_box_top :nth-child(3) {
+    display: none;
+  }
+  .coinDetails-box {
+    padding: 0 1rem;
+  }
+
+  .detail_box_main {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: stretch;
+    margin: auto;
+  }
+  .details_flex {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .price_details {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
   }
 }

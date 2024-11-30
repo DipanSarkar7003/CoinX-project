@@ -78,7 +78,7 @@ function SingleCoin() {
         <div className="logo-details">
           <img
             className="singleCoinImage"
-            src={`${singleCoinData?.image?.large}`}
+            src={`${singleCoinData?.image?.small}`}
             alt=""
           />
           <h3 className="sinngleCoinTopName">{singleCoinData?.name}</h3>
@@ -118,9 +118,9 @@ function SingleCoin() {
               {" "}
               {singleCoinData?.market_data?.current_price?.[currency] ||
                 "No Data found"}{" "}
-              {currency}
+              {currency} {" "}
+              <PriceMaking coin={singleCoinData.market_data} />
             </h3>
-            <PriceMaking coin={singleCoinData.market_data} />
           </div>
           <div>
             <div className="eye_icon">
