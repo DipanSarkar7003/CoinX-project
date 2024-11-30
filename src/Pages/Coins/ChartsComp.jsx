@@ -67,14 +67,6 @@ const ChartsComp = ({ coinChartData, currency, days }) => {
         position: "bottom",
       },
     },
-    scales: {
-      y: {
-        title: {
-          display: true,
-          text: "Prices",
-        },
-      },
-    },
   };
 
   return (
