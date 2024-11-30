@@ -58,6 +58,7 @@ function SingleCoin() {
     getSingleCoinData();
     setIsloading(false);
   }, [days, currency, id]);
+  const timeStamp = new Date(singleCoinData?.last_updated).toLocaleTimeString();
 
   //IF NO ID MATCH OR FOUND JUST RETURN
 
@@ -75,8 +76,12 @@ function SingleCoin() {
     <>
       <div className="singleCoinTopPart">
         <div className="logo-details">
-          <img src={`${singleCoinData?.image?.small}`} alt="" />
-          <h3>{singleCoinData?.name}</h3>
+          <img
+            className="singleCoinImage"
+            src={`${singleCoinData?.image?.large}`}
+            alt=""
+          />
+          <h3 className="sinngleCoinTopName">{singleCoinData?.name}</h3>
         </div>
         <div>
           <Currency setCurrency={setCurrency} />
@@ -94,13 +99,16 @@ function SingleCoin() {
         <div className="detail_box_top">
           <div className="name_details">
             <h1>{singleCoinData.name}</h1>
-            <div className="additional">
-              <h5>
-                Symbol : <span className="">{singleCoinData.symbol}</span>
-              </h5>
-              <h5>
-                Rank :<span className="">{singleCoinData.market_cap_rank}</span>
-              </h5>
+            <div className="additional ">
+              <h3>
+                Symbol : <span>{singleCoinData.symbol}</span>
+              </h3>
+            </div>
+            <div className="details_flex">
+              <small>
+                Rank :{" "}
+                <span className="">{singleCoinData.market_cap_rank}</span>
+              </small>
             </div>
           </div>
 
@@ -124,7 +132,7 @@ function SingleCoin() {
         <div className="detail_box_main">
           <div className="detail_box_main_left">
             <div className="market_cap_details details_flex">
-              <small>Market Cap</small>
+              <small>Market Cap : </small>
               <p>
                 {singleCoinData?.market_data?.market_cap?.[currency] ||
                   "No Data found"}{" "}
@@ -133,7 +141,7 @@ function SingleCoin() {
             </div>
 
             <div className="volume_24h_details details_flex">
-              <small>24H Volume</small>
+              <small>24H Volume :</small>
               <p>
                 {singleCoinData?.market_data?.total_volume?.[currency] ||
                   "No Data found"}{" "}
@@ -141,24 +149,78 @@ function SingleCoin() {
               </p>
             </div>
             <div className="current_supply_details details_flex">
-              <small>Circulating Supply</small>
+              <small>Circulating Supply : </small>
               <p>
                 {singleCoinData?.market_data?.circulating_supply ||
                   "No Data found"}
               </p>
             </div>
+            <div className="fdv_details details_flex">
+              <small>FDV :</small>
+              <p>
+                {singleCoinData?.market_data?.fully_diluted_valuation?.[
+                  currency
+                ] || "No Data found"}
+              </p>
+            </div>
           </div>
+          <div className="detail_box_main_middle">
+            <div className="24h_high_details details_flex">
+              <small>24H high :</small>
+              <p>
+                {singleCoinData?.market_data?.high_24h?.[currency] +
+                  ` ${currency}` || "Data not found"}
+              </p>
+            </div>
+            <div className="24h_low_details details_flex">
+              <small>24H low :</small>
+              <p>
+                {singleCoinData?.market_data?.low_24h?.[currency] +
+                  ` ${currency}` || "Data not found"}
+              </p>
+            </div>
+
+            <div className="people_buying_details details_flex">
+              <small>People buying (%) : </small>
+              <p className="green">
+                {singleCoinData?.sentiment_votes_up_percentage ||
+                  "No Data found"}
+              </p>
+            </div>
+            <div className="people_selling_details details_flex">
+              <small>People selling (%) : </small>
+              <p className="red">
+                {singleCoinData?.sentiment_votes_down_percentage ||
+                  "No Data found"}
+              </p>
+            </div>
+          </div>
+
           <div className="detail_box_main_right">
-            <h3>All Time High</h3>
-            <h3>
-              {singleCoinData?.market_data?.ath?.[currency] || "No Data found"}
-            </h3>
-            <PriceMaking coin={singleCoinData.market_data} />
-            <h3>All Time Low</h3>
-            <h3>
-              {singleCoinData?.market_data?.atl?.[currency] || "No Data found"}
-            </h3>
-            <PriceMaking coin={singleCoinData.market_data} />
+            <div className="all_time_high_details details_flex">
+              <small>All Time High :</small>
+              <p>
+                {singleCoinData?.market_data?.ath?.[currency] ||
+                  "No Data found"}
+              </p>
+            </div>
+            <div className="all_time_low details_flex">
+              <small>All Time Low :</small>
+              <p>
+                {singleCoinData?.market_data?.atl?.[currency] ||
+                  "No Data found"}
+              </p>
+            </div>
+            <div className="max_supply_details details_flex">
+              <small>Max Supply :</small>
+              <p>
+                {singleCoinData?.market_data?.max_supply || "No Data found"}
+              </p>
+            </div>
+            <div className="last_update_details details_flex">
+              <small>Last Updated :</small>
+              <p>{timeStamp || "No Data found"}</p>
+            </div>
           </div>
         </div>
       </div>
